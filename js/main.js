@@ -12,10 +12,10 @@ const age = parseInt(prompt("Inserisci l'età del passeggero"));
 const priceForKm = 0.21;
 
 // * creo const sconto under 18
-const discountUnder18 = 20;
+const discountPercentageUnder18 = 20;
 
 // * creo const sconto over 65
-const discountOver65 = 40;
+const discountPercentageOver65 = 40;
 
 // * creo output
 let output;
@@ -42,7 +42,7 @@ if (isDistanceValid && isAgeValid) {
   // * SE l'età dell'utente è MINORE di 18 anni
   if (age < 18) {
     // * applico sconto 20%
-    totPrice = totPrice - totPrice * (discountUnder18 / 100);
+    totPrice = totPrice - totPrice * (discountPercentageUnder18 / 100);
     // * aggiorno output
     output = totPrice;
   }
@@ -50,7 +50,7 @@ if (isDistanceValid && isAgeValid) {
   // * SE l'età dell'utente è MAGGIORE O UGUALE di 65 anni
   else if (age >= 65) {
     // * applico sconto 40%
-    totPrice = totPrice - totPrice * (discountOver65 / 100);
+    totPrice = totPrice - totPrice * (discountPercentageOver65 / 100);
     // * aggiorno output
     output = totPrice;
   }
