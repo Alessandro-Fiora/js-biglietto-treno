@@ -43,25 +43,23 @@ if (isDistanceValid && isAgeValid) {
   if (age < 18) {
     // * applico sconto 20%
     totPrice = totPrice - totPrice * (discountPercentageUnder18 / 100);
-    // * aggiorno output
-    output = totPrice;
+    // * aggiorno output con prezzo in forma umana (max 2 decimali)
+    output = `Il prezzo del biglietto è di: ${totPrice.toFixed(2)}€`;
   }
 
   // * SE l'età dell'utente è MAGGIORE O UGUALE di 65 anni
   else if (age >= 65) {
     // * applico sconto 40%
     totPrice = totPrice - totPrice * (discountPercentageOver65 / 100);
-    // * aggiorno output
-    output = totPrice;
+    // * aggiorno output con prezzo in forma umana (max 2 decimali)
+    output = `Il prezzo del biglietto è di: ${totPrice.toFixed(2)}€`;
   }
-
-  // ! OUTPUT
-  // * STAMPO output in forma umana (max 2 decimali)
-  alert(`Il prezzo del biglietto è di: ${output.toFixed(2)}€`);
 }
 
 // * ALTRIMENTI ( se input distanza E input età NON sono validi)
 else {
-  // ! OUTPUT
-  alert("I dati iseriti non sono corretti");
+  output = "I dati iseriti non sono corretti";
 }
+
+// ! OUTPUT
+alert(output);
