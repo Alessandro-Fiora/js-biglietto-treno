@@ -44,7 +44,9 @@ if (isDistanceValid && isAgeValid) {
     // * applico sconto 20%
     totPrice = totPrice - totPrice * (discountPercentageUnder18 / 100);
     // * aggiorno output con prezzo in forma umana (max 2 decimali)
-    output = `Il prezzo del biglietto è di: ${totPrice.toFixed(2)}€`;
+    output = `Il prezzo del biglietto è di: ${totPrice.toFixed(
+      2
+    )}€, già scontato del ${discountPercentageUnder18}%`;
   }
 
   // * SE l'età dell'utente è MAGGIORE O UGUALE di 65 anni
@@ -52,7 +54,9 @@ if (isDistanceValid && isAgeValid) {
     // * applico sconto 40%
     totPrice = totPrice - totPrice * (discountPercentageOver65 / 100);
     // * aggiorno output con prezzo in forma umana (max 2 decimali)
-    output = `Il prezzo del biglietto è di: ${totPrice.toFixed(2)}€`;
+    output = `Il prezzo del biglietto è di: ${totPrice.toFixed(
+      2
+    )}€, già scontato del ${discountPercentageOver65}%`;
   }
 }
 
